@@ -16,5 +16,6 @@ extern int led_index;
 extern int led_buffer[LED_NUMBER];
 
 void display7SEG(int num);
+void update7SEG(int index);
 
 #endif /* INC_LED_DISPLAY_H_ */
