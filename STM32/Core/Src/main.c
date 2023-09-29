@@ -35,6 +35,7 @@
 #define DURATION_0 100
 #define DURATION_1 100
 #define DURATION_2 100
+#define DURATION_3 100
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,7 +48,7 @@ TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
 int led_index = 0;
-int led_buffer[LED_NUMBER] = {1, 2, 3, 0};
+int led_buffer[LED_NUMBER] = {0, 0, 0, 0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -99,12 +100,14 @@ int main(void)
   setTimer0(DURATION_0);
   setTimer1(DURATION_1);
   setTimer2(DURATION_2);
+  setTimer3(DURATION_3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  updateClockBuffer();
 	  update7SEG(led_index);
 	  display7SEG(led_buffer[led_index]);
 	  if (timer0_flag == 1) {
@@ -118,6 +121,21 @@ int main(void)
 	  if (timer2_flag == 1) {
 		  setTimer2(DURATION_2);
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+	  }
+	  if (timer3_flag == 1) {
+		  setTimer3(DURATION_3);
+		  second ++;
+		  if (second >= 60) {
+			  second = 0;
+			  minute ++;
+		  }
+		  if (minute >= 60) {
+			  minute = 0;
+			  hour ++;
+		  }
+		  if (hour >= 24) {
+			  hour = 0;
+		  }
 	  }
     /* USER CODE END WHILE */
 
