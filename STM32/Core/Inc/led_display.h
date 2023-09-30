@@ -19,6 +19,7 @@ extern int hour;
 extern int minute;
 extern int second;
 extern int matrix_index;
+extern int matrix_offset;
 
 void display7SEG(int num);
 void update7SEG(int index);
