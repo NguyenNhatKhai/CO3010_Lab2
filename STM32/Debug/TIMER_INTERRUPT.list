@@ -41,11 +41,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   0000a2ec  00000000  00000000  00041499  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00082409  00000000  00000000  0004b785  2**0
+ 19 .debug_str    00082407  00000000  00000000  0004b785  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  000027b4  00000000  00000000  000cdb90  2**2
+ 20 .debug_frame  000027b4  00000000  00000000  000cdb8c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000053  00000000  00000000  000d0344  2**0
+ 21 .debug_line_str 00000053  00000000  00000000  000d0340  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -558,7 +558,7 @@ int main(void)
  8000482:	2064      	movs	r0, #100	; 0x64
  8000484:	f000 f9be 	bl	8000804 <setTimer0>
   setTimer1(DURATION_1);
- 8000488:	2064      	movs	r0, #100	; 0x64
+ 8000488:	2019      	movs	r0, #25
  800048a:	f000 f9cf 	bl	800082c <setTimer1>
   setTimer2(DURATION_2);
  800048e:	2064      	movs	r0, #100	; 0x64
@@ -567,10 +567,10 @@ int main(void)
  8000494:	2064      	movs	r0, #100	; 0x64
  8000496:	f000 f9f1 	bl	800087c <setTimer3>
   setTimer4(DURATION_4);
- 800049a:	2064      	movs	r0, #100	; 0x64
+ 800049a:	2019      	movs	r0, #25
  800049c:	f000 fa02 	bl	80008a4 <setTimer4>
   setTimer5(DURATION_5);
- 80004a0:	f44f 7048 	mov.w	r0, #800	; 0x320
+ 80004a0:	f44f 70c8 	mov.w	r0, #400	; 0x190
  80004a4:	f000 fa12 	bl	80008cc <setTimer5>
 
   /* Infinite loop */
@@ -629,7 +629,7 @@ int main(void)
  800050a:	2b01      	cmp	r3, #1
  800050c:	d10e      	bne.n	800052c <main+0xd8>
 		  setTimer1(DURATION_1);
- 800050e:	2064      	movs	r0, #100	; 0x64
+ 800050e:	2019      	movs	r0, #25
  8000510:	f000 f98c 	bl	800082c <setTimer1>
 		  led_index = (led_index + 1) % LED_NUMBER;
  8000514:	4b37      	ldr	r3, [pc, #220]	; (80005f4 <main+0x1a0>)
@@ -719,7 +719,7 @@ int main(void)
  800059c:	2b01      	cmp	r3, #1
  800059e:	d10e      	bne.n	80005be <main+0x16a>
 		  setTimer4(DURATION_4);
- 80005a0:	2064      	movs	r0, #100	; 0x64
+ 80005a0:	2019      	movs	r0, #25
  80005a2:	f000 f97f 	bl	80008a4 <setTimer4>
 		  matrix_index = (matrix_index + 1) % MATRIX_NUMBER;
  80005a6:	4b14      	ldr	r3, [pc, #80]	; (80005f8 <main+0x1a4>)
@@ -739,7 +739,7 @@ int main(void)
  80005c2:	2b01      	cmp	r3, #1
  80005c4:	f47f af70 	bne.w	80004a8 <main+0x54>
 		  setTimer5(DURATION_5);
- 80005c8:	f44f 7048 	mov.w	r0, #800	; 0x320
+ 80005c8:	f44f 70c8 	mov.w	r0, #400	; 0x190
  80005cc:	f000 f97e 	bl	80008cc <setTimer5>
 		  matrix_offset = (matrix_offset + 1) % MATRIX_NUMBER;
  80005d0:	4b0b      	ldr	r3, [pc, #44]	; (8000600 <main+0x1ac>)
