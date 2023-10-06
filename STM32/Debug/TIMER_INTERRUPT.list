@@ -41,7 +41,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   0000a2a8  00000000  00000000  000413f5  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000823c7  00000000  00000000  0004b69d  2**0
+ 19 .debug_str    000823c5  00000000  00000000  0004b69d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  20 .debug_frame  0000278c  00000000  00000000  000cda64  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -558,7 +558,7 @@ int main(void)
  8000482:	2064      	movs	r0, #100	; 0x64
  8000484:	f000 f996 	bl	80007b4 <setTimer0>
   setTimer1(DURATION_1);
- 8000488:	2064      	movs	r0, #100	; 0x64
+ 8000488:	2019      	movs	r0, #25
  800048a:	f000 f9a7 	bl	80007dc <setTimer1>
   setTimer2(DURATION_2);
  800048e:	2064      	movs	r0, #100	; 0x64
@@ -567,7 +567,7 @@ int main(void)
  8000494:	2064      	movs	r0, #100	; 0x64
  8000496:	f000 f9c9 	bl	800082c <setTimer3>
   setTimer4(DURATION_4);
- 800049a:	2064      	movs	r0, #100	; 0x64
+ 800049a:	2019      	movs	r0, #25
  800049c:	f000 f9da 	bl	8000854 <setTimer4>
 
   /* Infinite loop */
@@ -618,7 +618,7 @@ int main(void)
  80004ee:	2b01      	cmp	r3, #1
  80004f0:	d10e      	bne.n	8000510 <main+0xbc>
 		  setTimer1(DURATION_1);
- 80004f2:	2064      	movs	r0, #100	; 0x64
+ 80004f2:	2019      	movs	r0, #25
  80004f4:	f000 f972 	bl	80007dc <setTimer1>
 		  led_index = (led_index + 1) % LED_NUMBER;
  80004f8:	4b2c      	ldr	r3, [pc, #176]	; (80005ac <main+0x158>)
@@ -708,7 +708,7 @@ int main(void)
  8000580:	2b01      	cmp	r3, #1
  8000582:	d18d      	bne.n	80004a0 <main+0x4c>
 		  setTimer4(DURATION_4);
- 8000584:	2064      	movs	r0, #100	; 0x64
+ 8000584:	2019      	movs	r0, #25
  8000586:	f000 f965 	bl	8000854 <setTimer4>
 		  matrix_index = (matrix_index + 1) % MATRIX_NUMBER;
  800058a:	4b09      	ldr	r3, [pc, #36]	; (80005b0 <main+0x15c>)

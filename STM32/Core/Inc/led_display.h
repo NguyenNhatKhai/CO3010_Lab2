@@ -15,10 +15,11 @@
 
 extern int led_index;
 extern int led_buffer[LED_NUMBER];
+extern int matrix_index;
+
 extern int hour;
 extern int minute;
 extern int second;
-extern int matrix_index;
 
 void display7SEG(int num);
 void update7SEG(int index);

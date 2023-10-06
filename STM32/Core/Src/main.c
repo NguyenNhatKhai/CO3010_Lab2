@@ -33,10 +33,10 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define DURATION_0 100
-#define DURATION_1 100
+#define DURATION_1 25
 #define DURATION_2 100
 #define DURATION_3 100
-#define DURATION_4 100
+#define DURATION_4 25
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
