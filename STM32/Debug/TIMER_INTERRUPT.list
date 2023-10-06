@@ -41,7 +41,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   0000a0f7  00000000  00000000  00040b02  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00082025  00000000  00000000  0004abf9  2**0
+ 19 .debug_str    00082024  00000000  00000000  0004abf9  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  20 .debug_frame  000026cc  00000000  00000000  000ccc20  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -315,7 +315,7 @@ int main(void)
  80002c6:	2064      	movs	r0, #100	; 0x64
  80002c8:	f000 f918 	bl	80004fc <setTimer0>
   setTimer1(DURATION_1);
- 80002cc:	2064      	movs	r0, #100	; 0x64
+ 80002cc:	2019      	movs	r0, #25
  80002ce:	f000 f929 	bl	8000524 <setTimer1>
   setTimer2(DURATION_2);
  80002d2:	2064      	movs	r0, #100	; 0x64
@@ -356,7 +356,7 @@ int main(void)
  800030c:	2b01      	cmp	r3, #1
  800030e:	d10e      	bne.n	800032e <main+0x96>
 		  setTimer1(DURATION_1);
- 8000310:	2064      	movs	r0, #100	; 0x64
+ 8000310:	2019      	movs	r0, #25
  8000312:	f000 f907 	bl	8000524 <setTimer1>
 		  led_index = (led_index + 1) % LED_NUMBER;
  8000316:	4b0e      	ldr	r3, [pc, #56]	; (8000350 <main+0xb8>)

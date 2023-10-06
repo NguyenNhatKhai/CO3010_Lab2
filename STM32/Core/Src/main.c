@@ -33,7 +33,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define DURATION_0 100
-#define DURATION_1 100
+#define DURATION_1 25
 #define DURATION_2 100
 /* USER CODE END PD */
 
